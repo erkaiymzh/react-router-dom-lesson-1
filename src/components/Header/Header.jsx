@@ -13,10 +13,7 @@ const Header = () => {
             <Navbar.Brand className={location.pathname === "/" ? "btn btn-success" : "btn btn-light"} href="#home">Home</Navbar.Brand>
             </Link>
             <Link to="/add">
-            <Navbar.Brand className={location.pathname === "/add" ? "btn btn-success" : "btn btn-light"} href="#add">Add from</Navbar.Brand>
-            </Link>
-            <Link to="/edit">
-            <Navbar.Brand className={location.pathname === "/edit" ? "btn btn-success" : "btn btn-light"} href="#edit">Edit</Navbar.Brand>
+            <Navbar.Brand className={location.pathname === "/add" ? "btn btn-success" : "btn btn-light"} href="#add">Add form</Navbar.Brand>
             </Link>
             <Link to="/contacts">
             <Navbar.Brand className={location.pathname === "/contacts" ? "btn btn-success" : "btn btn-light"} href="#contacts">Contacts</Navbar.Brand>

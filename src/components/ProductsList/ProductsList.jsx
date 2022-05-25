@@ -1,6 +1,7 @@
 import { Button } from 'react-bootstrap';
 import React, { useEffect, useState } from 'react';
 import { Card } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 const ProductsList = ({getProducts, products, deleteProduct}) => {
     const [selectedProduct, setSelectedProduct] = useState("")
@@ -12,7 +13,7 @@ const ProductsList = ({getProducts, products, deleteProduct}) => {
       //  console.log(deleteProduct);
       //квадр скобки это массив зависимостей
     return (
-        <div className='container d-flex justify-content-between'>
+        <div className='container d-flex justify-content-around'>
             {products.map((item) => (<Card
             key={item.id}
             onClick={() => setSelectedProduct(item.id)}
@@ -25,8 +26,13 @@ const ProductsList = ({getProducts, products, deleteProduct}) => {
     <Card.Text>
      {item.price}
     </Card.Text>
-    <Button variant="primary">Buy</Button>
+    <Link to={`/edit/${item.id}`}>
+    <Button variant="primary">Edit</Button>
+    </Link>
     <Button onClick={()=> deleteProduct(item.id)} variant="danger">Delete</Button>
+    <Link to={"/details/" + item.id}>
+    <Button variant="warning">Details</Button>
+</Link>
   </Card.Body>
 </Card>) )}
         </div>
